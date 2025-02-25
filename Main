@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>映画上映情報サイト</title>
+  <style>
+    /* リセット */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    /* ヘッダー */
+    header {
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* コンテナ */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 100px 20px 40px 20px; /* ヘッダー分の余白を確保 */
+    }
+
+    /* セクション */
+    section {
+      background: #fff;
+      margin-bottom: 50px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    /* セクション毎に少しずつアニメーションの遅延を設定 */
+    section:nth-of-type(1) { animation-delay: 0.2s; }
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.8s; }
+    section:nth-of-type(5) { animation-delay: 1s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ffd700;
+      padding-bottom: 5px;
+    }
+
+    /* 上映情報テーブル */
+    .screenings table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .screenings th, .screenings td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    /* 予告編 */
+    .trailers iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+    }
+    .trailers iframe:hover {
+      transform: scale(1.05);
+    }
+
+    /* 視聴者の感想 */
+    .feedback ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .feedback li {
+      background: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 8px;
+      border-left: 4px solid #ffd700;
+    }
+
+    /* 自主上映勧誘 */
+    .invite {
+      text-align: center;
+      background: #ffd700;
+      padding: 20px;
+      border-radius: 5px;
+      font-size: 1.2em;
+    }
+    .invite a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 2px solid #333;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .invite a:hover {
+      color: #000;
+      border-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>映画上映情報サイト</h1>
+    <nav>
+      <a href="#info">映画情報</a>
+      <a href="#upcoming">今後の上映情報</a>
+      <a href="#past">過去の上映情報</a>
+      <a href="#trailers">予告編</a>
+      <a href="#feedback">視聴者の感想</a>
+      <a href="#invite">自主上映勧誘</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- 映画の基本情報・紹介 -->
+    <section id="info">
+      <h2>映画の基本情報・紹介</h2>
+      <p>本作は、感動と興奮に満ちた物語が展開する最新作です。主演は○○、監督は△△。緻密な演出と迫力の映像美が魅力で、心に残るドラマが紡がれます。</p>
+      <p>上映時間：120分 | ジャンル：アクション / ドラマ | 公開年：2025年</p>
+    </section>
+
+    <!-- 今後の上映情報 -->
+    <section id="upcoming" class="screenings">
+      <h2>今後の上映情報</h2>
+      <table>
+        <tr>
+          <th>日付</th>
+          <th>時間</th>
+          <th>会場</th>
+        </tr>
+        <tr>
+          <td>2025/03/15</td>
+          <td>18:00</td>
+          <td>シネマパーク</td>
+        </tr>
+        <tr>
+          <td>2025/03/20</td>
+          <td>20:00</td>
+          <td>映画の杜</td>
+        </tr>
+        <tr>
+          <td>2025/03/25</td>
+          <td>19:30</td>
+          <td>ムービーワールド</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 過去の上映情報 -->
+    <section id="past" class="screenings">
+      <h2>過去の上映情報</h2>
+      <table>
+        <tr>
+          <th>日付</th>
+          <th>時間</th>
+          <th>会場</th>
+        </tr>
+        <tr>
+          <td>2025/02/10</td>
+          <td>18:30</td>
+          <td>シネマステージ</td>
+        </tr>
+        <tr>
+          <td>2025/02/15</td>
+          <td>20:00</td>
+          <td>フィルムシアター</td>
+        </tr>
+        <tr>
+          <td>2025/02/20</td>
+          <td>19:00</td>
+          <td>ムービールーム</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- 予告編動画 -->
+    <section id="trailers" class="trailers">
+      <h2>予告編動画</h2>
+      <!-- 仮のYoutube埋め込みリンク -->
+      <iframe src="https://www.youtube.com/embed/dummyTrailer1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/dummyTrailer2" allowfullscreen></iframe>
+    </section>
+
+    <!-- 視聴者の感想 -->
+    <section id="feedback" class="feedback">
+      <h2>視聴者の感想</h2>
+      <ul>
+        <li>「映像美とストーリーに心を奪われました！」</li>
+        <li>「アクションシーンの迫力が素晴らしい！」</li>
+        <li>「何度も見たくなる、感動作です。」</li>
+      </ul>
+    </section>
+
+    <!-- 自主上映勧誘 -->
+    <section id="invite" class="invite">
+      <h2>あなたの街でも自主上映しませんか？</h2>
+      <p>この映画の魅力をもっと多くの人と共有しましょう。自主上映会の開催や企画のご相談も承ります！</p>
+      <p><a href="#contact">お問い合わせはこちら</a></p>
+    </section>
+  </div>
+</body>
+</html>
