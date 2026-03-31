@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chapter Story Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <aside class="side-nav-wrap">
+      <nav class="side-nav" aria-label="章ナビゲーション">
+        <div class="side-nav-title">Chapters</div>
+        <div id="chapter-nav" class="side-nav-list">
+          <a class="side-nav-link" href="#top">
+            <small>TOP</small>
+            はじめに
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+    <div class="content-column">
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div class="eyebrow">CSV × Chapter Storytelling</div>
+          <h1>長生炭鉱について知る</h1>
+          <p>
+            NDTツアー事前学習資料
+          </p>
+          <div class="scroll-indicator">↓ Scroll Down</div>
+        </div>
+      </section>
+
+      <main id="story-container">
+        <div class="loading">コンテンツを読み込み中...</div>
+      </main>
+
+      <footer class="footer">
+        各章ごとに intro と item を分けて管理できます。
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
